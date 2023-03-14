@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form with Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="checkout">
+        <form @submit.prevent="submitForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" v-model="name" required> <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" v-model="email" required> <br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" v-model="address" required> <br>
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" id="zipcode" v-model="zipcode" required> <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#checkout',
+            data: {
+                name: '',
+                email: '',
+                address: '',
+                zipcode: ''
+            },
+            methods: {
+                submitForm() {
+                    console.log('Form submitted');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
